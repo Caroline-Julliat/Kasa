@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  font-family: "font-1", sans-serif;
+}
+
+li {
+  list-style-type: none;
+}/*# sourceMappingURL=index.css.map */
