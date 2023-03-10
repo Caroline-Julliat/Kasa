@@ -1,1 +1,7 @@
-@import "./settings";
+@import "./base/reset";
+@import "./base/utils";
+@import "./base/settings";
+@import "./components/header";
+@import "./components/banner";
+@import "./components/accommodationCard";
+@import "./components/footer";

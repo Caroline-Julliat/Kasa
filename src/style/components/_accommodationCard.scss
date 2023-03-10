@@ -1,0 +1,43 @@
+.accommodation-container {
+  margin-top: 43px;
+  padding: 50px 4% 0px 4%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  background-color: $color-2;
+  border-radius: 25px;
+  @include mobile {
+    margin-top: 22px;
+    padding: 0px;
+    background-color: white;
+  }
+  article {
+    position: relative;
+    width: 29.8%;
+    min-width: 240px;
+    max-width: 455px;
+    height: 340px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    @include mobile {
+      margin: 0px 0px 20px 0px;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    h1 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 80%;
+    }
+    @include tablet {
+      width: 40%;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

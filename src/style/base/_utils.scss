@@ -1,0 +1,30 @@
+@mixin centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerAbsolute {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// BREAKPOINTS //
+$breakpoints: (
+  small: 668px,
+  medium: 992px,
+  large: 1440px,
+);
+
+@mixin tablet {
+  @media screen and (max-width: map-get($breakpoints, medium)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoints, small)) {
+    @content;
+  }
+}
