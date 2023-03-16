@@ -154,6 +154,18 @@ body {
   text-decoration: underline;
 }
 
+.footer-container {
+  background-color: #000000;
+  padding-top: 66px;
+}
+.footer-container img,
+.footer-container p {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 29px;
+}
+
 .banner-container {
   height: 223px;
   margin-top: 63px;
@@ -253,14 +265,7 @@ body {
   }
 }
 
-.footer-container {
-  background-color: #000000;
-  padding-top: 66px;
-}
-.footer-container img,
-.footer-container p {
-  display: block;
-  margin: auto;
-  text-align: center;
-  padding-bottom: 29px;
+.collapse-button {
+  background-color: #ff6060;
+  color: white;
 }/*# sourceMappingURL=index.css.map */
