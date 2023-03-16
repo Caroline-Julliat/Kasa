@@ -65,8 +65,8 @@ a {
 }
 
 .banner-container,
-.accommodation-container,
-.footer {
+.gallery-container,
+.footer-container {
   color: #ffffff;
 }
 
@@ -90,15 +90,26 @@ body {
 .banner-container {
   font-size: 48px;
 }
+@media screen and (max-width: 992px) {
+  .banner-container {
+    font-size: 36px;
+  }
+}
 @media screen and (max-width: 668px) {
   .banner-container {
     font-size: 24px;
   }
 }
 
-.page-body {
+html,
+body {
+  height: 100vh;
+}
+
+.layout {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .wrapper {
@@ -158,6 +169,11 @@ body {
      object-fit: cover;
   filter: brightness(0.7);
 }
+@media screen and (max-width: 992px) {
+  .banner-container img {
+    height: 165px;
+  }
+}
 @media screen and (max-width: 668px) {
   .banner-container img {
     height: 111px;
@@ -173,12 +189,18 @@ body {
 }
 @media screen and (max-width: 668px) {
   .banner-container {
+    margin-top: 45px;
+    height: 165px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .banner-container {
     margin-top: 16px;
     height: 111px;
   }
 }
 
-.accommodation-container {
+.gallery-container {
   margin-top: 43px;
   padding: 50px 4% 0px 4%;
   display: flex;
@@ -188,13 +210,13 @@ body {
   border-radius: 25px;
 }
 @media screen and (max-width: 668px) {
-  .accommodation-container {
+  .gallery-container {
     margin-top: 22px;
     padding: 0px;
     background-color: white;
   }
 }
-.accommodation-container article {
+.gallery-container article {
   position: relative;
   width: 29.8%;
   min-width: 240px;
@@ -204,39 +226,39 @@ body {
   border-radius: 10px;
 }
 @media screen and (max-width: 668px) {
-  .accommodation-container article {
+  .gallery-container article {
     margin: 0px 0px 20px 0px;
   }
 }
-.accommodation-container article img {
+.gallery-container article img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
 }
-.accommodation-container article h1 {
+.gallery-container article h1 {
   position: absolute;
   bottom: 20px;
   left: 20px;
   width: 80%;
 }
 @media screen and (max-width: 992px) {
-  .accommodation-container article {
+  .gallery-container article {
     width: 40%;
   }
 }
 @media screen and (max-width: 668px) {
-  .accommodation-container article {
+  .gallery-container article {
     width: 100%;
   }
 }
 
-.footer {
+.footer-container {
   background-color: #000000;
   padding-top: 66px;
 }
-.footer img,
-.footer p {
+.footer-container img,
+.footer-container p {
   display: block;
   margin: auto;
   text-align: center;

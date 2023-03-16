@@ -15,8 +15,8 @@ a {
 }
 
 .banner-container,
-.accommodation-container,
-.footer {
+.gallery-container,
+.footer-container {
   color: $white;
 }
 
@@ -43,6 +43,9 @@ body {
 
 .banner-container {
   font-size: 48px;
+  @include tablet {
+    font-size: 36px;
+  }
   @include mobile {
     font-size: 24px;
   }
@@ -50,9 +53,15 @@ body {
 
 //*********** GENERAL SETTINGS ***********//
 
-.page-body {
+html,
+body {
+  height: 100vh;
+}
+
+.layout {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .wrapper {

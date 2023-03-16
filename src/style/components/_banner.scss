@@ -10,6 +10,9 @@
     height: 223px;
     object-fit: cover;
     filter: brightness(0.7);
+    @include tablet {
+      height: 165px;
+    }
     @include mobile {
       height: 111px;
     }
@@ -19,6 +22,10 @@
     z-index: 2;
     @include centerAbsolute;
     width: 80%;
+  }
+  @include mobile {
+    margin-top: 45px;
+    height: 165px;
   }
   @include mobile {
     margin-top: 16px;

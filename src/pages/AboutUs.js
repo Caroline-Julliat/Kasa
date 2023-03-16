@@ -1,9 +1,12 @@
 import React from "react"
+import Banner from "../components/Banner"
 
 const AboutUs = () => {
+  const mainTitle = "Chez vous, partout et ailleurs"
+
   return (
-    <div>
-      <h1>ABOUT US</h1>
+    <div className="about-us">
+      <Banner imageSrc={"./images/image-montagne.png"} title={mainTitle} />
     </div>
   )
 }
