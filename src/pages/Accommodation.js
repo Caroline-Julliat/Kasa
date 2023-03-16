@@ -26,7 +26,7 @@ const Accomodation = () => {
         <article>
           <div className="accommodation-carousel">
             <Carousel
-              imageSrc={accommodationData.pictures[0]}
+              pictures={accommodationData.pictures}
               alt={accommodationData.title}
             />
           </div>
