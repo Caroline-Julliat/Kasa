@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Carousel from "../components/Carousel"
 import Collapse from "../components/Collapse"
+import Rating from "../components/Rating"
 
 const Accomodation = () => {
   const [accommodationData, setAccommodationData] = useState(null)
@@ -46,7 +47,7 @@ const Accomodation = () => {
                 <img src={accommodationData.host.picture} alt="" />
               </div>
               <div className="accommodation-details__rating">
-                <p>RATING</p>
+                <Rating rating={accommodationData.rating} />
               </div>
             </div>
           </div>
