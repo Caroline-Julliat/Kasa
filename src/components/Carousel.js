@@ -27,14 +27,15 @@ const Carousel = (props) => {
 
   return (
     <div className="carousel-container">
-      <button onClick={() => goLeft()}>
+      <button className="arrow-left" onClick={() => goLeft()}>
         <img src={chevronGauche} alt="chevron gauche" />
       </button>
       <img
+        className="carousel-picture"
         src={picturesArray[currentPictures]}
         alt={props.alt + " " + currentPictures}
       />
-      <button onClick={() => goRight()}>
+      <button className="arrow-right" onClick={() => goRight()}>
         <img src={chevronDroit} alt="chevron droit" />
       </button>
     </div>

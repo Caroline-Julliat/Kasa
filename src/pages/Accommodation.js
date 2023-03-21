@@ -25,30 +25,26 @@ const Accomodation = () => {
     <div className="accommodation">
       {accommodationData ? (
         <article>
-          <div className="accommodation-carousel">
-            <Carousel
-              pictures={accommodationData.pictures}
-              alt={accommodationData.title}
-            />
-          </div>
+          <Carousel
+            pictures={accommodationData.pictures}
+            alt={accommodationData.title}
+          />
           <div className="accommodation-details">
-            <div className="accommodation-details__container1">
+            <div className="accommodation-details__1">
               <h1>{accommodationData.title}</h1>
               <p>{accommodationData.location}</p>
-              <ul>
-                {accommodationData.tags.map((tag, index) => (
-                  <span key={index}>{tag}</span>
-                ))}
-              </ul>
+              {accommodationData.tags.map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </div>
-            <div className="accommodation-details__container2">
-              <div className="accommodation-details__owner">
+            <div className="accommodation-details__2">
+              <div className="accommodation-details__2owner">
                 <p>{accommodationData.host.name}</p>
-                <img src={accommodationData.host.picture} alt="" />
+                <div className="owner-picture">
+                  <img src={accommodationData.host.picture} alt="" />
+                </div>
               </div>
-              <div className="accommodation-details__rating">
-                <Rating rating={accommodationData.rating} />
-              </div>
+              <Rating rating={accommodationData.rating} />
             </div>
           </div>
           <div className="accommodation-collapse">

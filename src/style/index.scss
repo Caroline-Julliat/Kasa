@@ -1,6 +1,8 @@
 @import "./base/reset";
 @import "./base/utils";
 @import "./base/settings";
+@import "./pages/accommodation";
+@import "./pages/aboutUs";
 @import "./pages/notFound";
 @import "./components/header";
 @import "./components/footer";
@@ -8,3 +10,4 @@
 @import "./components/gallery";
 @import "./components/collapse";
 @import "./components/carousel";
+@import "./components/rating";
