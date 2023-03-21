@@ -37,7 +37,7 @@ const Accomodation = () => {
               <p>{accommodationData.location}</p>
               <ul>
                 {accommodationData.tags.map((tag, index) => (
-                  <li key={index}>{tag}</li>
+                  <span key={index}>{tag}</span>
                 ))}
               </ul>
             </div>

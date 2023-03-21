@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import chevronHaut from "../assets/images/chevron-haut.svg"
+import chevronBas from "../assets/images/chevron-bas.svg"
 
 const Collapse = (props) => {
   const [isActive, setIsActive] = useState(false)
@@ -10,10 +12,7 @@ const Collapse = (props) => {
     >
       <div className="collapse-button">
         <h2>{props.title}</h2>
-        <img
-          src={isActive ? "/images/fleche-haut.png" : "/images/fleche-bas.png"}
-          alt="chevron"
-        />
+        <img src={isActive ? chevronHaut : chevronBas} alt="chevron" />
       </div>
       <div
         className="collapse-content"

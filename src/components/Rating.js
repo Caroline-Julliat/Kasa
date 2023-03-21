@@ -1,13 +1,15 @@
 import React from "react"
+import etoilePleine from "../assets/images/etoile-pleine.svg"
+import etoileVide from "../assets/images/etoile-vide.svg"
 
 const Rating = ({ rating }) => {
   let urlArray = []
 
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
-      urlArray.push("/images/etoile-pleine.png")
+      urlArray.push(etoilePleine)
     } else {
-      urlArray.push("/images/etoile-vide.png")
+      urlArray.push(etoileVide)
     }
   }
 
