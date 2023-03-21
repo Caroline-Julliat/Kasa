@@ -124,6 +124,52 @@ body {
   }
 }
 
+.not-found {
+  text-align: center;
+}
+.not-found h1 {
+  font-size: 288px;
+  font-weight: 700;
+  margin-top: 169px;
+  margin-bottom: 66px;
+}
+@media screen and (max-width: 992px) {
+  .not-found h1 {
+    font-size: 192px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .not-found h1 {
+    font-size: 96px;
+    margin-bottom: 11px;
+  }
+}
+.not-found p {
+  font-size: 36px;
+  margin-bottom: 182px;
+}
+@media screen and (max-width: 992px) {
+  .not-found p {
+    font-size: 27px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .not-found p {
+    font-size: 18px;
+    margin-bottom: 133px;
+  }
+}
+.not-found a {
+  display: block;
+  margin-bottom: 159px;
+  text-decoration-line: underline;
+}
+@media screen and (max-width: 668px) {
+  .not-found a {
+    font-size: 14px;
+  }
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
