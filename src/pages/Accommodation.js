@@ -44,6 +44,7 @@ const Accomodation = () => {
                   <img src={accommodationData.host.picture} alt="" />
                 </div>
               </div>
+              <div className="owner-flex"></div>
               <Rating rating={accommodationData.rating} />
             </div>
           </div>

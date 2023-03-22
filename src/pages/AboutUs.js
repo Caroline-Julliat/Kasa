@@ -17,10 +17,12 @@ const AboutUs = () => {
   return (
     <div className="about-us">
       <Banner imageSrc={bgVueMontagne} title={mainTitle} />
-      <Collapse title={"Fiabilité"} content={fiabilite} />
-      <Collapse title={"Respect"} content={respect} />
-      <Collapse title={"Service"} content={service} />
-      <Collapse title={"Responsabilité"} content={responsabilité} />
+      <div className="about-us-collapse">
+        <Collapse title={"Fiabilité"} content={fiabilite} />
+        <Collapse title={"Respect"} content={respect} />
+        <Collapse title={"Service"} content={service} />
+        <Collapse title={"Responsabilité"} content={responsabilité} />
+      </div>
     </div>
   )
 }

@@ -2,6 +2,14 @@
   height: 223px;
   margin-top: 63px;
   position: relative;
+  @include tablet {
+    margin-top: 45px;
+    height: 165px;
+  }
+  @include mobile {
+    margin-top: 16px;
+    height: 111px;
+  }
   img {
     position: absolute;
     z-index: 1;
@@ -14,6 +22,7 @@
       height: 165px;
     }
     @include mobile {
+      border-radius: 10px;
       height: 111px;
     }
   }
@@ -22,13 +31,5 @@
     z-index: 2;
     @include centerAbsolute;
     width: 80%;
-  }
-  @include mobile {
-    margin-top: 45px;
-    height: 165px;
-  }
-  @include mobile {
-    margin-top: 16px;
-    height: 111px;
   }
 }

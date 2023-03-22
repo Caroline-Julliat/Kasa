@@ -1,5 +1,40 @@
 .collapse-button {
+  position: relative;
   background-color: $color-1;
   color: white;
-  border-radius: 5px;
+  img {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.collapse-content {
+  margin-top: -10px;
+  background-color: $color-2;
+  font-weight: 400;
+  flex: 1;
+}
+
+.accommodation-collapse {
+  .collapse-button {
+    border-radius: 10px;
+    padding: 13px 0px 13px 3.5%;
+  }
+  .collapse-content {
+    border-radius: 10px;
+    padding: 40px 2.5% 53px 3.5%;
+  }
+}
+
+.about-us-collapse {
+  .collapse-button {
+    border-radius: 5px;
+    padding: 9px 0px 9px 2%;
+  }
+  .collapse-content {
+    border-radius: 10px;
+    padding: 40px 2.5% 15px 2%;
+  }
 }
