@@ -188,9 +188,6 @@ body {
   width: 50%;
 }
 
-.about-us {
-  font-size: 24px;
-}
 .about-us h1 {
   color: transparent;
 }
@@ -199,6 +196,11 @@ body {
   width: 82.5%;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 992px) {
+  .about-us .collapse-container {
+    margin-top: 26px;
+  }
 }
 @media screen and (max-width: 668px) {
   .about-us .collapse-container {
@@ -293,24 +295,24 @@ body {
   margin: auto;
   text-align: center;
   padding-bottom: 29px;
+  font-size: 24px;
+}
+@media screen and (max-width: 992px) {
+  .footer-container img,
+  .footer-container p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .footer-container img,
+  .footer-container p {
+    font-size: 12px;
+  }
 }
 
 .banner-container {
   height: 223px;
-  margin-top: 63px;
   position: relative;
-}
-@media screen and (max-width: 992px) {
-  .banner-container {
-    margin-top: 45px;
-    height: 165px;
-  }
-}
-@media screen and (max-width: 668px) {
-  .banner-container {
-    margin-top: 16px;
-    height: 111px;
-  }
 }
 .banner-container img {
   position: absolute;
@@ -322,15 +324,9 @@ body {
      object-fit: cover;
   filter: brightness(0.7);
 }
-@media screen and (max-width: 992px) {
-  .banner-container img {
-    height: 165px;
-  }
-}
 @media screen and (max-width: 668px) {
   .banner-container img {
     border-radius: 10px;
-    height: 111px;
   }
 }
 .banner-container h1 {
@@ -340,6 +336,41 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
+}
+
+.home .banner-container {
+  margin-top: 63px;
+}
+@media screen and (max-width: 992px) {
+  .home .banner-container {
+    margin-top: 45px;
+    height: 165px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .home .banner-container {
+    margin-top: 0px;
+    height: 111px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .home .banner-container img {
+    height: 165px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .home .banner-container img {
+    height: 111px;
+  }
+}
+
+.about-us .banner-container {
+  margin-top: 44px;
+}
+@media screen and (max-width: 668px) {
+  .about-us .banner-container {
+    margin-top: 0px;
+  }
 }
 
 .gallery-container {
@@ -424,12 +455,34 @@ body {
 }
 
 .about-us-collapse .collapse-button {
+  font-size: 24px;
   border-radius: 5px;
   padding: 9px 0px 9px 2%;
 }
+@media screen and (max-width: 992px) {
+  .about-us-collapse .collapse-button {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .about-us-collapse .collapse-button {
+    font-size: 13px;
+  }
+}
 .about-us-collapse .collapse-content {
+  font-size: 24px;
   border-radius: 10px;
   padding: 40px 2.5% 15px 2%;
+}
+@media screen and (max-width: 992px) {
+  .about-us-collapse .collapse-content {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .about-us-collapse .collapse-content {
+    font-size: 12px;
+  }
 }
 
 .carousel-container {

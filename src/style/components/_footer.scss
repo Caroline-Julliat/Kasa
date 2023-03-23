@@ -7,5 +7,12 @@
     margin: auto;
     text-align: center;
     padding-bottom: 29px;
+    font-size: 24px;
+    @include tablet {
+      font-size: 18px;
+    }
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }

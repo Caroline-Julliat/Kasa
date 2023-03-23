@@ -1,15 +1,6 @@
 .banner-container {
   height: 223px;
-  margin-top: 63px;
   position: relative;
-  @include tablet {
-    margin-top: 45px;
-    height: 165px;
-  }
-  @include mobile {
-    margin-top: 16px;
-    height: 111px;
-  }
   img {
     position: absolute;
     z-index: 1;
@@ -18,12 +9,8 @@
     height: 223px;
     object-fit: cover;
     filter: brightness(0.7);
-    @include tablet {
-      height: 165px;
-    }
     @include mobile {
       border-radius: 10px;
-      height: 111px;
     }
   }
   h1 {
@@ -31,5 +18,36 @@
     z-index: 2;
     @include centerAbsolute;
     width: 80%;
+  }
+}
+
+.home {
+  .banner-container {
+    margin-top: 63px;
+    @include tablet {
+      margin-top: 45px;
+      height: 165px;
+    }
+    @include mobile {
+      margin-top: 0px;
+      height: 111px;
+    }
+    img {
+      @include tablet {
+        height: 165px;
+      }
+      @include mobile {
+        height: 111px;
+      }
+    }
+  }
+}
+
+.about-us {
+  .banner-container {
+    margin-top: 44px;
+    @include mobile {
+      margin-top: 0px;
+    }
   }
 }
