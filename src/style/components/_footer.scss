@@ -1,6 +1,10 @@
 .footer-container {
   background-color: $black;
   padding-top: 66px;
+  margin-top: 80px;
+  @include mobile {
+    margin-top: 50px;
+  }
   img,
   p {
     display: block;

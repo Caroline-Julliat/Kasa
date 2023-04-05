@@ -80,30 +80,10 @@ body {
   font-weight: 500;
 }
 
-@media screen and (max-width: 668px) {
-  .header-container {
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-}
-
-.banner-container {
-  font-size: 48px;
-}
-@media screen and (max-width: 992px) {
-  .banner-container {
-    font-size: 36px;
-  }
-}
-@media screen and (max-width: 668px) {
-  .banner-container {
-    font-size: 24px;
-  }
-}
-
 html,
 body {
   height: 100vh;
+  min-width: 280px;
 }
 
 .layout {
@@ -133,6 +113,7 @@ body {
 @media screen and (max-width: 992px) {
   .accommodation-details {
     flex-direction: column;
+    margin-bottom: 17px;
   }
 }
 
@@ -154,6 +135,7 @@ body {
 @media screen and (max-width: 668px) {
   .accommodation-details__1 p {
     font-size: 14px;
+    margin-bottom: 5px;
   }
 }
 .accommodation-details__1 span {
@@ -166,13 +148,15 @@ body {
   width: 150px;
   text-align: center;
   border-radius: 10px;
-  padding-top: 3px;
-  padding-bottom: 2px;
+  padding-top: 5px;
+  padding-bottom: 4px;
 }
 @media screen and (max-width: 668px) {
   .accommodation-details__1 span {
     font-size: 10px;
     width: 110px;
+    margin-top: 5px;
+    border-radius: 5px;
   }
 }
 
@@ -309,6 +293,13 @@ body {
 .header-container {
   display: flex;
   justify-content: space-between;
+  font-size: 24px;
+}
+@media screen and (max-width: 668px) {
+  .header-container {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
 }
 @media screen and (max-width: 668px) {
   .header-container img {
@@ -317,19 +308,22 @@ body {
 }
 .header-container ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  height: 100%;
+  flex-wrap: wrap;
 }
 .header-container a {
-  display: block;
-  line-height: 68px;
+  display: flex;
+  height: 100%;
+  align-content: center;
+  justify-content: flex-end;
   width: 155px;
   text-align: right;
-  align-content: center;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 668px) {
   .header-container a {
     width: 80px;
-    line-height: 47px;
   }
 }
 .header-container a:hover {
@@ -339,6 +333,12 @@ body {
 .footer-container {
   background-color: #000000;
   padding-top: 66px;
+  margin-top: 80px;
+}
+@media screen and (max-width: 668px) {
+  .footer-container {
+    margin-top: 50px;
+  }
 }
 .footer-container img,
 .footer-container p {
@@ -364,6 +364,17 @@ body {
 .banner-container {
   height: 223px;
   position: relative;
+  font-size: 48px;
+}
+@media screen and (max-width: 992px) {
+  .banner-container {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .banner-container {
+    font-size: 24px;
+  }
 }
 .banner-container img {
   position: absolute;
@@ -387,6 +398,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
+  text-align: center;
+}
+@media screen and (max-width: 668px) {
+  .banner-container h1 {
+    width: 65%;
+    text-align: left;
+    left: 16px;
+    transform: translate(0%, -50%);
+  }
 }
 
 .home .banner-container {
@@ -426,7 +446,7 @@ body {
 
 .gallery-container {
   margin-top: 43px;
-  padding: 50px 4% 0px 4%;
+  padding: 50px 2% 0px 2%;
   display: flex;
   justify-content: space-around;
   flex-flow: wrap;
@@ -441,39 +461,59 @@ body {
   }
 }
 
-.gallery-container article {
+.accomodation-card {
   position: relative;
-  width: 29.8%;
+  width: 28.8%;
   min-width: 240px;
   max-width: 455px;
   height: 340px;
   margin-bottom: 50px;
   border-radius: 10px;
+  transition: 0.4s;
+}
+.accomodation-card:hover {
+  transform: scale(1.04);
 }
 @media screen and (max-width: 668px) {
-  .gallery-container article {
+  .accomodation-card {
+    height: 255px;
     margin: 0px 0px 20px 0px;
   }
 }
-.gallery-container article img {
+.accomodation-card .card-image-wrapper {
+  width: 100%;
   height: 100%;
+}
+.accomodation-card .card-image-wrapper::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  border-radius: 10px;
+}
+.accomodation-card .card-image-wrapper img {
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
 }
-.gallery-container article h1 {
+.accomodation-card h1 {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  width: 80%;
+  width: 65%;
 }
 @media screen and (max-width: 992px) {
-  .gallery-container article {
+  .accomodation-card {
     width: 40%;
   }
 }
 @media screen and (max-width: 668px) {
-  .gallery-container article {
+  .accomodation-card {
     width: 100%;
   }
 }
@@ -489,24 +529,29 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
+@media screen and (max-width: 668px) {
+  .collapse-button img {
+    width: 15px;
+  }
+}
 
 .collapse-content {
-  margin-top: -10px;
+  margin-top: -8px;
   background-color: #f6f6f6;
   font-weight: 400;
   flex: 1;
+  list-style-type: none;
 }
 
 .accommodation-collapse .collapse-button {
   border-radius: 10px;
-  padding: 13px 0px 13px 3.5%;
+  padding: 13px 0px 13px 3.6%;
 }
 @media screen and (max-width: 668px) {
   .accommodation-collapse .collapse-button {
     font-size: 13px;
-  }
-  .accommodation-collapse .collapse-button img {
-    width: 15px;
+    padding: 5.5px 0px 5.5px 3.6%;
+    border-radius: 5px;
   }
 }
 .accommodation-collapse .collapse-content {
@@ -516,6 +561,8 @@ body {
 @media screen and (max-width: 668px) {
   .accommodation-collapse .collapse-content {
     font-size: 12px;
+    padding: 23px 3.5% 4px 3.5%;
+    border-radius: 5px;
   }
 }
 
@@ -531,12 +578,13 @@ body {
 }
 @media screen and (max-width: 668px) {
   .about-us-collapse .collapse-button {
+    padding: 7px 0px 7px 3%;
     font-size: 13px;
   }
 }
 .about-us-collapse .collapse-content {
   font-size: 24px;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 40px 2.5% 15px 2%;
 }
 @media screen and (max-width: 992px) {
@@ -547,6 +595,7 @@ body {
 @media screen and (max-width: 668px) {
   .about-us-collapse .collapse-content {
     font-size: 12px;
+    padding: 23px 2.5% 52px 3%;
   }
 }
 
@@ -560,6 +609,7 @@ body {
   .carousel-container {
     height: 255px;
     margin-top: 25px;
+    margin-bottom: 15px;
   }
 }
 .carousel-container button {
@@ -572,6 +622,18 @@ body {
 @media screen and (max-width: 668px) {
   .carousel-container button img {
     height: 20px;
+  }
+}
+.carousel-container span {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+@media screen and (max-width: 668px) {
+  .carousel-container span {
+    display: none;
   }
 }
 

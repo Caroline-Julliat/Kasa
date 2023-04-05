@@ -3,25 +3,25 @@ import chevronGauche from "../assets/images/chevron-gauche.svg"
 import chevronDroit from "../assets/images/chevron-droit.svg"
 
 const Carousel = (props) => {
-  const [currentPictures, setCurrentPictures] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
   const picturesArray = props.pictures
 
   // console.log(picturesArray)
   // console.log(picturesArray.length)
 
   const goLeft = () => {
-    if (currentPictures === 0) {
-      setCurrentPictures(picturesArray.length - 1)
+    if (currentIndex === 0) {
+      setCurrentIndex(picturesArray.length - 1)
     } else {
-      setCurrentPictures(currentPictures - 1)
+      setCurrentIndex(currentIndex - 1)
     }
   }
 
   const goRight = () => {
-    if (currentPictures < picturesArray.length - 1) {
-      setCurrentPictures(currentPictures + 1)
+    if (currentIndex < picturesArray.length - 1) {
+      setCurrentIndex(currentIndex + 1)
     } else {
-      setCurrentPictures(0)
+      setCurrentIndex(0)
     }
   }
 
@@ -32,12 +32,13 @@ const Carousel = (props) => {
       </button>
       <img
         className="carousel-picture"
-        src={picturesArray[currentPictures]}
-        alt={props.alt + " " + currentPictures}
+        src={picturesArray[currentIndex]}
+        alt={props.alt + " " + currentIndex}
       />
       <button className="arrow-right" onClick={() => goRight()}>
         <img src={chevronDroit} alt="chevron droit" />
       </button>
+      <span>{currentIndex + 1 + "/" + picturesArray.length}</span>
     </div>
   )
 }

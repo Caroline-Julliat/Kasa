@@ -6,6 +6,7 @@
   @include mobile {
     height: 255px;
     margin-top: 25px;
+    margin-bottom: 15px;
   }
   button {
     position: absolute;
@@ -17,6 +18,16 @@
       @include mobile {
         height: 20px;
       }
+    }
+  }
+  span {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    @include mobile {
+      display: none;
     }
   }
 }

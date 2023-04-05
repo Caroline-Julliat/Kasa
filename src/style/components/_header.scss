@@ -1,6 +1,11 @@
 .header-container {
   display: flex;
   justify-content: space-between;
+  font-size: 24px;
+  @include mobile {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
   img {
     @include mobile {
       height: 47px;
@@ -8,17 +13,20 @@
   }
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    height: 100%;
+    flex-wrap: wrap;
   }
   a {
-    display: block;
-    line-height: 68px;
+    display: flex;
+    height: 100%;
+    align-content: center;
+    justify-content: flex-end;
     width: 155px;
     text-align: right;
-    align-content: center;
+    flex-wrap: wrap;
     @include mobile {
       width: 80px;
-      line-height: 47px;
     }
     &:hover {
       text-decoration: underline;

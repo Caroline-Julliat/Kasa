@@ -5,6 +5,7 @@
   gap: 20px;
   @include tablet {
     flex-direction: column;
+    margin-bottom: 17px;
   }
 }
 
@@ -23,6 +24,7 @@
     line-height: 26px;
     @include mobile {
       font-size: 14px;
+      margin-bottom: 5px;
     }
   }
   span {
@@ -35,11 +37,13 @@
     width: 150px;
     text-align: center;
     border-radius: 10px;
-    padding-top: 3px;
-    padding-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 4px;
     @include mobile {
       font-size: 10px;
       width: 110px;
+      margin-top: 5px;
+      border-radius: 5px;
     }
   }
 }

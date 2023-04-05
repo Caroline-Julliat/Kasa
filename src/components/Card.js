@@ -11,10 +11,13 @@ const Card = ({ accommodationData }) => {
     <React.Fragment>
       {accommodationData.map((accommodation) => (
         <article
+          className="accomodation-card"
           key={accommodation.id}
           onClick={() => redirectAccomodation(accommodation.id)}
         >
-          <img src={accommodation.cover} alt={accommodation.title} />
+          <div className="card-image-wrapper">
+            <img src={accommodation.cover} alt={accommodation.title} />
+          </div>
           <h1>{accommodation.title}</h1>
         </article>
       ))}

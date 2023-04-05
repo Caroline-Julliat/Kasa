@@ -1,15 +1,3 @@
-@mixin centerFlex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin centerAbsolute {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 // BREAKPOINTS //
 $breakpoints: (
   small: 668px,

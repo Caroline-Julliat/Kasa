@@ -1,6 +1,13 @@
 .banner-container {
   height: 223px;
   position: relative;
+  font-size: 48px;
+  @include tablet {
+    font-size: 36px;
+  }
+  @include mobile {
+    font-size: 24px;
+  }
   img {
     position: absolute;
     z-index: 1;
@@ -16,8 +23,17 @@
   h1 {
     position: absolute;
     z-index: 2;
-    @include centerAbsolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 80%;
+    text-align: center;
+    @include mobile {
+      width: 65%;
+      text-align: left;
+      left: 16px;
+      transform: translate(0%, -50%);
+    }
   }
 }
 
