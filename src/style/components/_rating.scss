@@ -1,7 +1,14 @@
 .rating-container {
   text-align: right;
   width: 200px;
+  @include mobile {
+    text-align: left;
+  }
   img {
     margin-left: 10px;
+    @include mobile {
+      width: 15px;
+      margin-left: 5px;
+    }
   }
 }

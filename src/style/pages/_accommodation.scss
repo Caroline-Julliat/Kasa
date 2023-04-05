@@ -2,16 +2,28 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
+  gap: 20px;
+  @include tablet {
+    flex-direction: column;
+  }
 }
 
 .accommodation-details__1 {
   h1 {
     font-size: 36px;
     line-height: 51px;
+    @include mobile {
+      font-size: 18px;
+      line-height: normal;
+      margin-bottom: 5px;
+    }
   }
   p {
     margin-bottom: 10px;
     line-height: 26px;
+    @include mobile {
+      font-size: 14px;
+    }
   }
   span {
     margin-top: 10px;
@@ -25,27 +37,41 @@
     border-radius: 10px;
     padding-top: 3px;
     padding-bottom: 2px;
+    @include mobile {
+      font-size: 10px;
+      width: 110px;
+    }
   }
 }
 
 .accommodation-details__2 {
   display: flex;
   flex-direction: column;
+  @include tablet {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
   &owner {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 24px;
     p {
       width: 93px;
       text-align: right;
       margin-right: 10px;
+      @include mobile {
+        font-size: 12px;
+      }
     }
     div {
       width: 64px;
       height: 64px;
       border-radius: 32px;
       overflow: hidden;
+      @include mobile {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }
@@ -58,9 +84,16 @@
 .accommodation-collapse {
   display: flex;
   gap: 6%;
+  @include mobile {
+    flex-direction: column;
+  }
   .collapse-container {
     display: flex;
     flex-direction: column;
     width: 50%;
+    @include mobile {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 }

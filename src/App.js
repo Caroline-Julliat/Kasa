@@ -5,10 +5,12 @@ import Accommodation from "./pages/Accommodation"
 import Home from "./pages/Home"
 import Layout from "./pages/Layout"
 import NotFound from "./pages/NotFound"
+import ScrollToTop from "./helpers/ScrollToTop"
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />

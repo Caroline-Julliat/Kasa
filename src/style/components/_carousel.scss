@@ -2,13 +2,22 @@
   position: relative;
   height: 415px;
   margin-top: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  @include mobile {
+    height: 255px;
+    margin-top: 25px;
+  }
   button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent;
     border: none;
+    img {
+      @include mobile {
+        height: 20px;
+      }
+    }
   }
 }
 
@@ -16,6 +25,11 @@
   object-fit: cover;
   height: 415px;
   width: 100%;
+  border-radius: 25px;
+  @include mobile {
+    height: 255px;
+    border-radius: 10px;
+  }
 }
 
 .arrow-left {
