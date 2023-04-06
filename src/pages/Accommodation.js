@@ -1,29 +1,36 @@
-import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import useFetch from "../helpers/useFetch"
 import Carousel from "../components/Carousel"
 import Collapse from "../components/Collapse"
 import Rating from "../components/Rating"
 
 const Accomodation = () => {
-  const [accommodationData, setAccommodationData] = useState(null)
   const { accommodationId } = useParams()
 
-  useEffect(() => {
-    axios
-      .get("../accommodationData.json")
-      .then((res) => res.data)
-      .then((resData) => {
-        setAccommodationData(resData.filter((i) => i.id === accommodationId)[0])
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [accommodationId])
+  const { data, loading, error } = useFetch("../accommodationData.json")
+  const [accommodationData, setAccommodationData] = useState(null)
+  // console.log(error)
 
-  return (
-    <div className="accommodation">
-      {accommodationData ? (
+  // We wait for the data before modifying the state of AccomodationData
+  useEffect(() => {
+    if (data) {
+      setAccommodationData(data.filter((i) => i.id === accommodationId)[0])
+    }
+  }, [data, accommodationId])
+
+  // PAGE VIEW
+  if (loading) {
+    // if loading is true => We display "Loading..."
+    return (
+      <div className="loading">
+        <h2>Chargement...</h2>
+      </div>
+    )
+  } else if (accommodationData) {
+    // if accomodation data is not null => we display the page content
+    return (
+      <div className="accommodation">
         <article>
           <Carousel
             pictures={accommodationData.pictures}
@@ -61,11 +68,16 @@ const Accomodation = () => {
             />
           </div>
         </article>
-      ) : (
-        <p>OUPS ERROR</p>
-      )}
-    </div>
-  )
+      </div>
+    )
+  } else if (error) {
+    // if an error occurs => we display "Loading failed"
+    return (
+      <div className="error">
+        <h2>une erreur s'est produite lors du chargement de la page</h2>
+      </div>
+    )
+  }
 }
 
 export default Accomodation

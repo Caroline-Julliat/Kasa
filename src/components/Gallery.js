@@ -1,22 +1,38 @@
-import axios from "axios"
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Card from "./Card"
+import useFetch from "../helpers/useFetch"
 
 const Gallery = () => {
-  const [accommodationData, setAccommodationData] = useState([])
+  const {
+    data: accommodationData,
+    loading,
+    error,
+  } = useFetch("accommodationData.json")
 
-  useEffect(() => {
-    axios
-      .get("accommodationData.json")
-      .then((res) => setAccommodationData(res.data))
-      .catch((error) => console.log(error))
-  }, [])
+  if (error) console.log(error)
 
-  return (
-    <div className="gallery-container">
-      <Card accommodationData={accommodationData} />
-    </div>
-  )
+  if (loading) {
+    // if loading is true => We display "Loading..."
+    return (
+      <div className="loading">
+        <h2>Chargement...</h2>
+      </div>
+    )
+  } else if (error) {
+    // if an error occurs => we display "Loading failed"
+    return (
+      <div className="error">
+        <h2>une erreur s'est produite lors du chargement de la page</h2>
+      </div>
+    )
+  } else {
+    // We display the page content
+    return (
+      <div className="gallery-container">
+        <Card accommodationData={accommodationData} />
+      </div>
+    )
+  }
 }
 
 export default Gallery
