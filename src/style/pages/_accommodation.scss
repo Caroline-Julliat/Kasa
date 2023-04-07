@@ -12,16 +12,17 @@
 .accommodation-details__1 {
   h1 {
     font-size: 36px;
-    line-height: 51px;
+    margin-bottom: 10px;
+    @include tablet {
+      font-size: 27px;
+    }
     @include mobile {
       font-size: 18px;
-      line-height: normal;
-      margin-bottom: 5px;
     }
   }
   p {
     margin-bottom: 10px;
-    line-height: 26px;
+    margin-top: 5px;
     @include mobile {
       font-size: 14px;
       margin-bottom: 5px;

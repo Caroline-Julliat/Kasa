@@ -31,7 +31,7 @@ const Carousel = (props) => {
       <button
         className="arrow-left"
         style={{
-          display: picturesArray.length === 1 ? "none" : "inline-block",
+          display: picturesArray.length === 1 ? "none" : "",
         }}
         onClick={() => goLeft()}
       >
@@ -45,7 +45,7 @@ const Carousel = (props) => {
       <button
         className="arrow-right"
         style={{
-          display: picturesArray.length === 1 ? "none" : "inline-block",
+          display: picturesArray.length === 1 ? "none" : "",
         }}
         onClick={() => goRight()}
       >
@@ -53,7 +53,7 @@ const Carousel = (props) => {
       </button>
       <span
         style={{
-          display: picturesArray.length === 1 ? "none" : "block",
+          display: picturesArray.length === 1 ? "none" : "",
         }}
       >
         {currentIndex + 1 + "/" + picturesArray.length}

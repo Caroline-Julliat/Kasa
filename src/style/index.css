@@ -84,6 +84,8 @@ html,
 body {
   height: 100vh;
   min-width: 280px;
+  max-width: 1920px;
+  margin: auto;
 }
 
 .layout {
@@ -114,6 +116,10 @@ body {
   height: 300px;
 }
 
+.green {
+  background-color: greenyellow;
+}
+
 .accommodation-details {
   display: flex;
   justify-content: space-between;
@@ -129,18 +135,21 @@ body {
 
 .accommodation-details__1 h1 {
   font-size: 36px;
-  line-height: 51px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 992px) {
+  .accommodation-details__1 h1 {
+    font-size: 27px;
+  }
 }
 @media screen and (max-width: 668px) {
   .accommodation-details__1 h1 {
     font-size: 18px;
-    line-height: normal;
-    margin-bottom: 5px;
   }
 }
 .accommodation-details__1 p {
   margin-bottom: 10px;
-  line-height: 26px;
+  margin-top: 5px;
 }
 @media screen and (max-width: 668px) {
   .accommodation-details__1 p {
@@ -615,6 +624,11 @@ body {
   margin-top: 20px;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 992px) {
+  .carousel-container {
+    height: 330px;
+  }
+}
 @media screen and (max-width: 668px) {
   .carousel-container {
     height: 255px;
@@ -628,6 +642,11 @@ body {
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
+}
+@media screen and (max-width: 992px) {
+  .carousel-container button img {
+    height: 50px;
+  }
 }
 @media screen and (max-width: 668px) {
   .carousel-container button img {
@@ -654,6 +673,11 @@ body {
   width: 100%;
   border-radius: 25px;
 }
+@media screen and (max-width: 992px) {
+  .carousel-picture {
+    height: 330px;
+  }
+}
 @media screen and (max-width: 668px) {
   .carousel-picture {
     height: 255px;
@@ -673,13 +697,18 @@ body {
   text-align: right;
   width: 200px;
 }
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 992px) {
   .rating-container {
     text-align: left;
   }
 }
 .rating-container img {
   margin-left: 10px;
+}
+@media screen and (max-width: 992px) {
+  .rating-container img {
+    width: 22px;
+  }
 }
 @media screen and (max-width: 668px) {
   .rating-container img {
