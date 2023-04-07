@@ -6,8 +6,9 @@ const Carousel = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const picturesArray = props.pictures
 
-  // console.log(picturesArray)
-  // console.log(picturesArray.length)
+  // if (picturesArray.lenght === 1) {
+
+  // }
 
   const goLeft = () => {
     if (currentIndex === 0) {
@@ -27,7 +28,13 @@ const Carousel = (props) => {
 
   return (
     <div className="carousel-container">
-      <button className="arrow-left" onClick={() => goLeft()}>
+      <button
+        className="arrow-left"
+        style={{
+          display: picturesArray.length === 1 ? "none" : "inline-block",
+        }}
+        onClick={() => goLeft()}
+      >
         <img src={chevronGauche} alt="chevron gauche" />
       </button>
       <img
@@ -35,10 +42,22 @@ const Carousel = (props) => {
         src={picturesArray[currentIndex]}
         alt={props.alt + " " + currentIndex}
       />
-      <button className="arrow-right" onClick={() => goRight()}>
+      <button
+        className="arrow-right"
+        style={{
+          display: picturesArray.length === 1 ? "none" : "inline-block",
+        }}
+        onClick={() => goRight()}
+      >
         <img src={chevronDroit} alt="chevron droit" />
       </button>
-      <span>{currentIndex + 1 + "/" + picturesArray.length}</span>
+      <span
+        style={{
+          display: picturesArray.length === 1 ? "none" : "block",
+        }}
+      >
+        {currentIndex + 1 + "/" + picturesArray.length}
+      </span>
     </div>
   )
 }
