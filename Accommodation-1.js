@@ -20,14 +20,9 @@ const Accomodation = () => {
   // We wait for the data before modifying the state of AccomodationData
   useEffect(() => {
     if (data) {
-      let datalist = data.find((i) => i.id === accommodationId)
-      if (datalist === undefined) {
-        console.log("dans useEffect id pas trouvé")
-        redirect404()
-      }
-      setAccommodationData(datalist)
+      setAccommodationData(data.filter((i) => i.id === accommodationId)[0])
     }
-  }, [data, accommodationId, loading])
+  }, [data, accommodationId])
 
   // PAGE VIEW
   if (loading) {
