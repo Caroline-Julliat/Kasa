@@ -6,10 +6,7 @@ const Carousel = (props) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const picturesArray = props.pictures
 
-  // if (picturesArray.lenght === 1) {
-
-  // }
-
+  // function to handle the click on the LEFT arrow
   const goLeft = () => {
     if (currentIndex === 0) {
       setCurrentIndex(picturesArray.length - 1)
@@ -18,6 +15,7 @@ const Carousel = (props) => {
     }
   }
 
+  // function to handle the click on the RIGHT arrow
   const goRight = () => {
     if (currentIndex < picturesArray.length - 1) {
       setCurrentIndex(currentIndex + 1)
@@ -30,6 +28,7 @@ const Carousel = (props) => {
     <div className="carousel-container">
       <button
         className="arrow-left"
+        // if the accommodation has only one photo, the arrow are not displayed
         style={{
           display: picturesArray.length === 1 ? "none" : "",
         }}
@@ -44,6 +43,7 @@ const Carousel = (props) => {
       />
       <button
         className="arrow-right"
+        // if the accommodation has only one photo, the arrow are not displayed
         style={{
           display: picturesArray.length === 1 ? "none" : "",
         }}
@@ -52,6 +52,7 @@ const Carousel = (props) => {
         <img src={chevronDroit} alt="chevron droit" />
       </button>
       <span
+        // if the accommodation has only one photo, the pagination is not displayed
         style={{
           display: picturesArray.length === 1 ? "none" : "",
         }}

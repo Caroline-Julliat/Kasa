@@ -2,10 +2,11 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 
 const Card = ({ accommodationData }) => {
+  // function to handle redirection to the accomodation page
+  let navigate = useNavigate()
   const redirectAccomodation = (userId) => {
     navigate("/logement/" + userId)
   }
-  let navigate = useNavigate()
 
   return (
     <React.Fragment>

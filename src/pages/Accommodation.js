@@ -7,22 +7,21 @@ import Rating from "../components/Rating"
 import { useNavigate } from "react-router-dom"
 
 const Accomodation = () => {
-  let navigate = useNavigate()
-  const redirect404 = () => {
-    navigate("/*")
-  }
-
   const { accommodationId } = useParams()
-
   const { data, loading, error } = useFetch("../accommodationData.json")
   const [accommodationData, setAccommodationData] = useState(null)
 
-  // We wait for the data before modifying the state of AccomodationData
+  // function to handle redirection to 404 page
+  let navigate = useNavigate()
+  const redirect404 = () => {
+    navigate("/not-found")
+  }
+
+  // When data is loaded, we test if the id corresponds to an existing accommodation otherwise we redirect to the 404 page
   useEffect(() => {
     if (data) {
       let datalist = data.find((i) => i.id === accommodationId)
       if (datalist === undefined) {
-        console.log("dans useEffect id pas trouvé")
         redirect404()
       }
       setAccommodationData(datalist)
@@ -35,6 +34,13 @@ const Accomodation = () => {
     return (
       <div className="loading">
         <h2>Chargement...</h2>
+      </div>
+    )
+  } else if (error) {
+    // if an error occurs => we display "Loading failed"
+    return (
+      <div className="error">
+        <h2>une erreur s'est produite lors du chargement de la page</h2>
       </div>
     )
   } else if (accommodationData) {
@@ -78,13 +84,6 @@ const Accomodation = () => {
             />
           </div>
         </article>
-      </div>
-    )
-  } else if (error) {
-    // if an error occurs => we display "Loading failed"
-    return (
-      <div className="error">
-        <h2>une erreur s'est produite lors du chargement de la page</h2>
       </div>
     )
   }

@@ -19,6 +19,7 @@ const App = () => {
           />
           <Route path="/a-propos" element={<AboutUs />} />
           <Route path="/*" element={<NotFound />} />
+          <Route path="/not-found" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
