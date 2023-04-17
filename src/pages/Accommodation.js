@@ -10,6 +10,7 @@ const Accomodation = () => {
   const { accommodationId } = useParams()
   const { data, loading, error } = useFetch("../accommodationData.json")
   const [accommodationData, setAccommodationData] = useState(null)
+  const [isIncorrectId, setIsIncorrectId] = useState(false)
 
   // function to handle redirection to 404 page
   let navigate = useNavigate()
@@ -22,7 +23,7 @@ const Accomodation = () => {
     if (data) {
       let datalist = data.find((i) => i.id === accommodationId)
       if (datalist === undefined) {
-        redirect404()
+        setIsIncorrectId(true)
       }
       setAccommodationData(datalist)
     }
@@ -43,6 +44,8 @@ const Accomodation = () => {
         <h2>une erreur s'est produite lors du chargement de la page</h2>
       </div>
     )
+  } else if (isIncorrectId) {
+    redirect404()
   } else if (accommodationData) {
     // if accomodation data is not null => we display the page content
     return (
